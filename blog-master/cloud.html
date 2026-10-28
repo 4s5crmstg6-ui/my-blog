@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云平台学习 | 技术博客</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tech: { dark: '#0f172a', card: '#1e293b', accent: '#38bdf8', text: '#cbd5e1' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .nav-link { @apply px-3 py-2 rounded-md text-tech-text hover:text-tech-accent hover:bg-tech-card transition-colors; }
+        }
+    </style>
+</head>
+<body class="bg-tech-dark text-tech-text min-h-screen">
+    <header class="sticky top-0 z-50 bg-tech-dark/90 backdrop-blur border-b border-slate-700">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa fa-code text-tech-accent text-xl"></i>
+                <span class="font-bold text-lg text-white">DevOps Notes</span>
+            </div>
+            <nav class="hidden md:flex gap-2">
+                <a href=" " class="nav-link">首页</a >
+                <a href="docker.html" class="nav-link">Docker笔记</a >
+                <a href="k8s.html" class="nav-link">K8s学习</a >
+                <a href="cloud.html" class="nav-link text-tech-accent">云平台</a >
+                <a href="about.html" class="nav-link">关于我</a >
+            </nav>
+            <button class="md:hidden text-white"><i class="fa fa-bars text-xl"></i></button>
+        </div>
+    </header>
+    <main class="max-w-4xl mx-auto px-4 py-10">
+        <a href="index.html" class="inline-flex items-center gap-1 text-tech-accent mb-6 hover:underline">
+            <i class="fa fa-arrow-left"></i> 返回首页
+        </a >
+        <article class="bg-tech-card rounded-xl p-6 md:p-8">
+            <h1 class="text-2xl font-bold text-white mb-4">云平台学习笔记</h1>
+            <div class="text-slate-300 space-y-4">
+                <p>云计算提供按需获取的计算、存储、网络资源，分为IaaS、PaaS、SaaS三层服务模型。</p >
+                <h3 class="text-lg font-semibold text-white mt-6">✅ IaaS基础设施</h3>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>弹性云服务器ECS / VM虚拟机</li>
+                    <li>对象存储OSS，存放静态文件</li>
+                    <li>VPC专有网络、安全组访问控制</li>
+                </ul>
+            </div>
+        </article>
+    </main>
+    <footer class="border-t border-slate-700 mt-16 py-6 text-center text-sm text-slate-500">
+        © 2026 个人技术博客
+    </footer>
+</body>
+</html>

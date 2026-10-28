@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K8s基础学习 | 技术博客</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        tech: { dark: '#0f172a', card: '#1e293b', accent: '#38bdf8', text: '#cbd5e1' }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .nav-link { @apply px-3 py-2 rounded-md text-tech-text hover:text-tech-accent hover:bg-tech-card transition-colors; }
+        }
+    </style>
+</head>
+<body class="bg-tech-dark text-tech-text min-h-screen">
+    <header class="sticky top-0 z-50 bg-tech-dark/90 backdrop-blur border-b border-slate-700">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa fa-code text-tech-accent text-xl"></i>
+                <span class="font-bold text-lg text-white">DevOps Notes</span>
+            </div>
+            <nav class="hidden md:flex gap-2">
+                <a href=" " class="nav-link">首页</a >
+                <a href="docker.html" class="nav-link">Docker笔记</a >
+                <a href="k8s.html" class="nav-link text-tech-accent">K8s学习</a >
+                <a href="cloud.html" class="nav-link">云平台</a >
+                <a href="about.html" class="nav-link">关于我</a >
+            </nav>
+            <button class="md:hidden text-white"><i class="fa fa-bars text-xl"></i></button>
+        </div>
+    </header>
+    <main class="max-w-4xl mx-auto px-4 py-10">
+        <a href="index.html" class="inline-flex items-center gap-1 text-tech-accent mb-6 hover:underline">
+            <i class="fa fa-arrow-left"></i> 返回首页
+        </a >
+        <article class="bg-tech-card rounded-xl p-6 md:p-8">
+            <h1 class="text-2xl font-bold text-white mb-4">K8s基础学习</h1>
+            <div class="text-slate-300 space-y-4">
+                <p>Kubernetes（简称K8s）是容器编排平台，用来大规模管理容器，实现自动扩缩容、故障自愈、滚动发布。</p >
+                <h3 class="text-lg font-semibold text-white mt-6">✅ 核心资源对象</h3>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>Pod：K8s最小调度单元，一个Pod可以包含多个容器</li>
+                    <li>Deployment：管理无状态应用，版本滚动更新、回滚</li>
+                    <li>Service：提供一组Pod的统一访问入口，负载均衡</li>
+                </ul>
+                <h3 class="text-lg font-semibold text-white mt-6">✅ 基础命令</h3>
+                <pre class="bg-tech-dark p-4 rounded-lg overflow-x-auto text-slate-200 text-sm">
+kubectl get pods
+kubectl apply -f deploy.yaml
+kubectl delete deployment myapp
+                </pre>
+            </div>
+        </article>
+    </main>
+    <footer class="border-t border-slate-700 mt-16 py-6 text-center text-sm text-slate-500">
+        © 2026 个人技术博客
+    </footer>
+</body>
+</html>
